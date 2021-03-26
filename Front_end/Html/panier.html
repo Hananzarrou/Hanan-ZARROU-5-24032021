@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Front_end/css/style.css">
+        <link rel="stylesheet" href="/Front_end/css/panier.css">
+        <link rel="stylesheet" href="/Front_end/css/media.css">
+        <link rel="shortcut icon" type="image/png" href="/Front_end/images/favicon.jpg">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+
+
+    <title>Orinoco - Panier</title>
+
+
+</head>
+
+<!--BODY-->
+<body>
+<header>
+        <div class="presentation">
+            <img src="/Front_end/images/logo_orinoco.jpg" alt="logo Oniroco">
+            <div class="liens">
+                <ul>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="panier.html"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div> 
+</header>
+
+<section class="panier">
+    <h1>Panier</h1>   
+    <table id="table" class="table">
+        <thead id="thead">
+            <th>Produit</th>
+            <th></th>
+            <th>Prix</th>
+            <th></th>
+            <th>Supprimer</th>
+            <th></th>
+        </thead>
+
+        <tbody id="tbody"> 
+        </tbody>
+    </table>
+
+</section>
+
+<section class="container">
+    <div class="commande">
+        <h2>Votre Commande</h2>
+        <form id="formulaire" method="POST">
+
+            <label for="prenom" class="labelFlax">Prénom</label>
+            <input type="text" name="prenom" id="prenom" required maxlength="20" class="flexInp" placeholder="Entrez votre prénom">
+        
+            <label for="nom" class="labelFlax">Nom</label>
+            <input type="text" name="nom" id="nom" required maxlength="20" class="flexInp" placeholder="Entrez votre nom">
+
+            <label for="adresse" class="labelFlax">Adresse</label>
+            <input type="text" name="adresse" id="adresse" required maxlength="35" class="flexInp" placeholder="Entrez votre adresse postale">
+
+            <label for="mail" class="labelFlax">E-Mail</label>
+            <input type="mail" name="mail" id="mail" required maxlength="35" class="flexInp" placeholder="Entrez votre e-mail">
+
+            <label for="ville" class="labelFlax">Ville</label>
+            <input type="text" name="ville" id="ville" required maxlength="35" class="flexInp" placeholder="Entrez votre ville">
+
+            <button class="boutton">
+                acceder au paiement
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+
+<!--Footer-->
+    <footer>
+        <div class="info">
+
+            <ul>
+
+                <li>
+                    <a href="conditions">Conditions Générales</a>
+                </li>
+
+                </li>
+                    <a href="propos">À Propos</a>
+                </li>
+
+                </li>
+                    <a href="contact">Nous Contacter</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </footer>
+
+    <script src="/Front_end/JS/app.js"></script>
+ </body>
+</html>  

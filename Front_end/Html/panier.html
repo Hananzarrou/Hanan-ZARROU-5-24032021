@@ -44,15 +44,23 @@
     <table id="table" class="table">
         <thead id="thead">
             <th>Produit</th>
-            <th></th>
+            
             <th>Prix</th>
-            <th></th>
+            
             <th>Supprimer</th>
-            <th></th>
+            
         </thead>
 
         <tbody id="tbody"> 
         </tbody>
+    </table>
+
+    <table class="resultat">
+
+        <thead id="thead2">
+            <th class="total">Total</th>  
+        </thead>
+
     </table>
 
 </section>
@@ -77,9 +85,10 @@
             <label for="ville" class="labelFlax">Ville</label>
             <input type="text" name="ville" id="ville" required maxlength="35" class="flexInp" placeholder="Entrez votre ville">
 
-            <button class="boutton">
-                acceder au paiement
-            </button>
+            
+            <input type="submit" value="Accédez au Payment" class="button">
+            
+            <p id="erreur"></p>
 
         </form>
 

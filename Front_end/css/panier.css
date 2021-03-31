@@ -41,13 +41,45 @@ th:nth-child(1) {
 thead th {
 
     padding: 15px;
-
 }
 tbody td {
 
     padding: 25px;
 }
+#thead2 {
+
+    display: flex;
+    justify-content: flex-start;
+    font-weight: bold;
+    font-size: 20px;
+    height: 60px;
+    background: rgb(238, 71, 216);   
+}
+.resultat {
+
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 20px;   
+}
+#thead2 .total {
+    display: flex;
+    width: 278px;
+    color: #fff;
+    background: rgb(99, 5, 59);
+}
+/*#thead2 .prixTotal {
+
+    background: none;
+    width: 590px;
+}*/
+tbody td {
+
+    padding: 25px 0 20px 5px;
+
+}
+
 /* COMMANDE */
+
 
 .commande {
 
@@ -102,6 +134,22 @@ form {
 
     margin-left: 30px;
 }
+
+input {
+
+    display: block;
+    justify-content: center;
+    margin: 20px auto;
+    outline: 0;
+    background: #f1f1f1;
+    width: 90%;
+    border: 0;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 5px;
+
+}
+
 .boutton {
 
     display: block;
@@ -125,18 +173,11 @@ form {
     background: rgb(199, 79, 109);
 
 }
-#boutton {
 
-    display: flex;
-    font-size: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 0;
-    color: #fff;
-    background: red;
-    margin-left: 30px;
-    font-family: 'poppins', sans-serif;
-    cursor: pointer;
+#erreur {
+
+    color: rgb(161, 1, 1);
+
 }
 
 /* FOOTER */

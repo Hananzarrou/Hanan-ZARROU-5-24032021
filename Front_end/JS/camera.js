@@ -8,13 +8,12 @@ function getCamera(data, idCamera) {
     let myCamera = data.find(data => data["id"] == idCamera);
 
 }
-
-
+// RECUPERATION DE L'URL AVEC ID
 fetch('http://localhost:3000/api/cameras/' + idCamera)
 .then(res => res.json())
 .then(myCamera => {
 
-    
+// CREATION DU CONTENU DE L'ELEMENT CARTE (CAMERA)    
     let section = document.querySelector('.camera');
 
 
@@ -89,11 +88,11 @@ fetch('http://localhost:3000/api/cameras/' + idCamera)
             produitList.push(produit)
             localStorage.setItem("panier", JSON.stringify(produitList))
         }
-
+//LE NAVIGATEUR NE CHANGE PAS DE PAGE AVEC PREVENTDEFANT
         e.preventDefault()
         
         alert("Votre produit a été ajoutée au panier");
-
+//REVOI 0 LA PAGE PANIER
         window.location.href = 'panier.html';
          
     });

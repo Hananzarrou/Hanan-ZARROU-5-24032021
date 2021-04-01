@@ -1,16 +1,14 @@
+// RECUPERATION DE L'ID DANS L'URL
 const urlCamera = new URLSearchParams(window.location.search);
 const idCamera = urlCamera.get("id");
 
-
-
-
-
+//FONCTION POUR RECUPERER UN CAMERA PAR SON ID UNIQUE 
 function getCamera(data, idCamera) {
 
     let myCamera = data.find(data => data["id"] == idCamera);
 
-
 }
+
 
 fetch('http://localhost:3000/api/cameras/' + idCamera)
 .then(res => res.json())
@@ -51,20 +49,21 @@ fetch('http://localhost:3000/api/cameras/' + idCamera)
     camera.appendChild(lentille);
     let myLenses = myCamera.lenses;
 
+//BOUCLE POUR CREER LES OPTIONS LENTILLES
 
     for(let i = 0; i < myLenses.length; i++) {
         let el = document.createElement("option");
         el.textContent = myLenses[i];
         liste.appendChild(el);
-
     }
 
+// CREATION DU BOUTON D'AJOUT DES PRODUITS AU PANIER
     let boutton = document.createElement('button');
     boutton.setAttribute("class", 'btn-produit2');
     boutton.textContent = `Ajouter au Panier`;
     camera.appendChild(boutton);
 
-
+//ECOUTE DE L'EVENEMENT AU CLIC DU BOUTON ARTICLE AJOUTE     
     boutton.addEventListener('click', (e) => {
           
         const produit = {
@@ -75,7 +74,7 @@ fetch('http://localhost:3000/api/cameras/' + idCamera)
             image: myCamera.imageUrl,
         
         };
-
+// on ajoute les produits au localStorage à chaque sélection
         let products = JSON.parse(localStorage.getItem("panier"))
         
         if(products) {

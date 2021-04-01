@@ -1,12 +1,12 @@
-// CREATION DE l API AVEC FETCH
+//  RECUPERATION DE L'API AVEC FETCH 
 fetch('http://localhost:3000/api/cameras')
     .then(res => res.json())
     .then(data => {
 
         
- // UNE BOUCLE FOR POUR ITERER 5 CARDS PRINCIPALES
+ // UNE BOUCLE FOR POUR ITERER 5 CARTES
         for(let i = 0; i < data.length; i++) {
-// STRUCTURE HTML DES CARDS
+// STRUCTURE HTML DES CARTES
         
             let main = document.querySelector('#main');
 
@@ -29,17 +29,26 @@ fetch('http://localhost:3000/api/cameras')
             prix.setAttribute("class", 'prix');
             prix.textContent = data[i].price / 100 + ' €';
             camera.appendChild(prix);
-// CREATION DU BOUTON LIEN VERS PAGE PRODUIT               
+// CREATION DU BOUTON LIEN VERS PAGE CAMERA              
             let produit = document.createElement('button');
             produit.setAttribute("class", 'btn-produit');
             produit.textContent = `Voir le Produit`;
             camera.appendChild(produit);
+//FONCTION DE RECUPERATION DE L'URL PAGE CAMERA    
+
+function url() {
+
+    //récupération de l'id de chaque camera
+            let getUrl = "?id=" + data[i]._id; 
+    //redirection vers la page de camera 
+            window.location.href = "./Front_end/camera.html" + getUrl;
+}
 
 //ECOUTE DE L'EVENEMENT AU CLIC DU BOUTON  
 //au clic, le bouton exécute la fonction
             produit.addEventListener('click', (e) => {
                 e.preventDefault()
-//redirection vers la page de camera                
+//REDIRECTION VERS LA PAGE CAMERA              
                 window.location = 'camera.html?id=' + data[i]._id;
 
             });

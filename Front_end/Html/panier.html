@@ -65,7 +65,75 @@
 
 </section>
 
-<section class="container">
+<div class="formulaire">
+
+    <div class="header">
+
+        <h2>Formulaire de Commande</h2>
+
+        <form class="main-form" id="myform" >
+
+            <div class="form">
+
+                <label for="">Prénom</label>
+                <input type="text" placeholder="Entrez votre Prénom" id="firstname" autocomplete="off" pattern="^[( )a-zA-Z]+$">
+                <i class="fas sucess">&#xf058</i>
+                <i class="fas error">&#xf06a</i>
+                <small class="message">Erreur Message</small>
+
+            </div>
+
+            <div class="form">
+
+                <label for="">Nom</label>
+                <input type="text" placeholder="Entrez votre Nom" id="lastname" autocomplete="off"  pattern="^[( )a-zA-Z]+$">
+                <i class="fas sucess">&#xf058</i>
+                <i class="fas error">&#xf06a</i>
+                <small class="message">Erreur Message</small>
+
+            </div>
+
+            <div class="form">
+
+                <label for="">Adresse</label>
+                <input type="text" placeholder="Entrez votre Adresse Postale" id="address" autocomplete="off" pattern="^[A-Za-z-éèê0-9, ]+$">
+                <i class="fas sucess">&#xf058</i>
+                <i class="fas error">&#xf06a</i>
+                <small class="message">Erreur Message</small>
+
+            </div>
+
+            <div class="form">
+
+                <label for="">Adresse Mail</label>
+                <input type="email" placeholder="Entrez votre Adresse Mail" id="email" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,4}">
+                <i class="fas sucess">&#xf058</i>
+                <i class="fas error">&#xf06a</i>
+                <small class="message">Erreur Message</small>
+
+            </div>
+
+            <div class="form">
+
+                <label for="">Ville</label>
+                <input type="text" placeholder="Entrez votre Ville" id="city" autocomplete="off" pattern="^[( )a-zA-Z]+$">
+                <i class="fas sucess">&#xf058</i>
+                <i class="fas error">&#xf06a</i>
+                <small class="message">Erreur Message</small>
+
+            </div>
+
+            <button class="btn">Confirmer la Commande</button>
+
+        </form>
+
+    </div>
+    
+</div>
+
+
+
+<!--<section class="container">
     <div class="commande">
         <h2>Votre Commande</h2>
         <form id="formulaire" method="POST">
@@ -93,7 +161,7 @@
         </form>
 
     </div>
-</section>
+</section>-->
 
 
 <!--Footer-->

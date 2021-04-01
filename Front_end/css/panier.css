@@ -1,53 +1,42 @@
 /* PANIER */
 
 .panier h1 {
-
     display: flex;
     justify-content: center;
     margin-top: 50px;
     font-size: 25px;
-
 }
 
 .container {
-
     margin: 0.5rem;
 
 }
 .table {
-
-    background: rgb(238, 166, 98);
+    background: rgb(242, 228, 247);
     margin-top: 30px;
     box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
     width: 100%;
     border-collapse: collapse;
-
 }
 th:nth-child(1) {
-
     width: 35%;
 }
 .table th, .table td {
-
     border: 1px solid #000;
 }
 
 .table th {
-
     background: rgb(83, 9, 102);
     color: #fff;
 
 }
 thead th {
-
     padding: 15px;
 }
 tbody td {
-
     padding: 25px;
 }
 #thead2 {
-
     display: flex;
     justify-content: flex-start;
     font-weight: bold;
@@ -56,32 +45,103 @@ tbody td {
     background: rgb(238, 71, 216);   
 }
 .resultat {
-
     border: 1px solid black;
     width: 100%;
     margin-top: 20px;   
 }
+#thead2 {
+    display: flex;
+    justify-content: flex-start;
+    font-weight: bold;
+    font-size: 20px;
+    height: 60px;
+    background: rgb(243, 240, 237);   
+}
 #thead2 .total {
     display: flex;
-    width: 278px;
-    color: #fff;
-    background: rgb(99, 5, 59);
+    width: 110px;
+    color: rgb(49, 48, 48);
+    background: rgb(247, 213, 241);
 }
-/*#thead2 .prixTotal {
-
+#thead2 .prixTotal {
     background: none;
     width: 590px;
-}*/
+}
 tbody td {
+    padding: 20px 0 25px 5px;
 
-    padding: 25px 0 20px 5px;
+}
+button {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    background: rgb(206, 14, 174);
+    font-family: 'poppins', sans-serif;
+    cursor: pointer;
+    margin: auto;
+}
+#erreur {
+    color: rgb(243, 50, 50);
+}
+/* FORMULAIRE */
 
+.formulaire {
+    background-color: rgb(250, 206, 244);
+    margin-top: 150px;
+    overflow: hidden;
+}
+.header {
+    text-align: center;
+    padding: 20px;
+}
+.main-form {
+    padding: 30px 40px;
+}
+
+.form {
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.form input {
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-family: inherit;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+}
+.form i {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    visibility: hidden;
+}
+.form small {  
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+    visibility: hidden;
+}
+
+.btn {
+    padding: 10px;
+    cursor: pointer;
+    background: rgb(67, 3, 73);
+    outline: none;
+}
+.btn:hover {
+
+    background-color: rgb(124, 7, 160);
 }
 
 /* COMMANDE */
 
 
-.commande {
+/*.commande {
 
     background: rgb(241, 172, 232);
     margin-top: 90px;
@@ -176,7 +236,7 @@ input {
 
 #erreur {
 
-    color: rgb(161, 1, 1);
+    color: rgb(161, 1, 1);*/
 
 }
 

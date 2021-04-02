@@ -53,16 +53,21 @@ h1 {
     width: 300px;
     height: auto;
     margin: 50px auto;
-    background: rgba(26, 25, 25, 0.842);
+    background: rgba(243, 199, 228, 0.842);
 }
 .nom {
-   
+    display:flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
     font-weight: bold;
     margin: 10px;
     color: rgba(255, 255, 255, 0.842);
 }
 .prix {
+    display:flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
     font-weight: bold;
     margin: 10px;
@@ -90,17 +95,17 @@ h1 {
     padding: 10px;
     font-family: 'poppins', sans-serif;
     font-size: 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     border: 0;
     color: #fff;
-    background-color: rgb(180, 55, 6);
+    background-color: rgba(231, 124, 213, 0.651);
     width: 278px;
     margin: 10px;
     cursor: pointer;
 }
 .btn-produit:hover {
 
-    background-color: rgb(182, 74, 31);
+    background-color: rgb(202, 113, 235);
 }
 .btn-produit2 {  
     width: 17%;
@@ -110,7 +115,7 @@ h1 {
     border-radius: 5px;
     border: 0;
     color: #fff;
-    background-color: rgb(180, 55, 6);
+    background-color: rgb(218, 39, 194);
     width: 278px;
     margin: 10px;
     cursor: pointer;
@@ -118,7 +123,7 @@ h1 {
 }
 .btn-produit2:hover {
 
-    background-color: rgb(182, 74, 31);
+    background-color: rgb(154, 39, 221);
 }
 
 /* FOOTER */
@@ -151,12 +156,8 @@ footer {
         
     }
 
-    #main {
-
-        
+    #main {  
         display: flex;
-        
-
     }
     .photo {
 
@@ -165,10 +166,8 @@ footer {
            
     }
 
-    .image {
-        
+    .image { 
         width: 298px;
-    
     }
     
     #produit {

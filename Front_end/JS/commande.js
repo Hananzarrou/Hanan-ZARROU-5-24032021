@@ -1,5 +1,6 @@
 let monPanier = localStorage.getItem("panier");
 let panierTotal = JSON.parse(monPanier);
+console.log('panierTotal', panierTotal);
 
 
 
@@ -61,7 +62,8 @@ thead2.insertAdjacentHTML("beforeend", affichage);
 
 // FORMULAIRE //
 
-document.getElementById("formulaire").addEventListener("submit", function(e) {
+document.getElementById("myform").addEventListener("submit", (e) => {
+    e.preventDefault();
 
 let erreur;
 let prenom = document.getElementById("prenom");
@@ -140,7 +142,7 @@ let email = /[a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,4}/;
 
     if(erreur) {
 
-        e.preventDefault();
+       
         document.getElementById("erreur").innerHTML = erreur;
 
 
@@ -193,9 +195,9 @@ let email = /[a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,4}/;
     })
 
     .then(response => response.json())
-    .then(() => {
-
-        window.location.href = 'validation.html';
+    .then((json) => {
+        console.log('response', json);
+        window.location.href = 'confirmation.html';
     })
 
     .catch(err => console.log("erreur : " + response.status))

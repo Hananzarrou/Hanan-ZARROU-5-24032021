@@ -22,11 +22,12 @@ th:nth-child(1) {
     width: 35%;
 }
 .table th, .table td {
-    border: 1px solid #000;
+   border: 1px solid #000;
+    /*border-radius: 1px;*/
 }
 
 .table th {
-    background: rgb(83, 9, 102);
+    background: rgb(218, 138, 238);
     color: #fff;
 
 }
@@ -60,8 +61,10 @@ tbody td {
 #thead2 .total {
     display: flex;
     width: 110px;
+    border-radius: 4px;
     color: rgb(49, 48, 48);
     background: rgb(247, 213, 241);
+   
 }
 #thead2 .prixTotal {
     background: none;
@@ -73,8 +76,10 @@ tbody td {
 }
 button {
     font-size: 15px;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 17px;
+    /*border-radius: 15px;*/
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
     border: 0;
     color: #fff;
     background: rgb(206, 14, 174);
@@ -107,7 +112,7 @@ button {
 }
 .form input {
     border: 2px solid #fff;
-    border-radius: 4px;
+    border-radius: 14px;
     font-family: inherit;
     width: 100%;
     display: block;
@@ -130,12 +135,12 @@ button {
 .btn {
     padding: 10px;
     cursor: pointer;
-    background: rgb(67, 3, 73);
+    background: rgb(154, 150, 155);
     outline: none;
 }
 .btn:hover {
 
-    background-color: rgb(124, 7, 160);
+    background-color: rgb(184, 6, 238);
 }
 
 /* COMMANDE */

@@ -65,21 +65,21 @@ thead2.insertAdjacentHTML("beforeend", affichage);
 document.getElementById("myform").addEventListener("submit", (e) => {
     e.preventDefault();
 
-let erreur;
-let prenom = document.getElementById("prenom");
-let firstname = /[a-zA-ZÀ-ÿ]/;
+    let erreur;
+    let prenom = document.getElementById("prenom");
+    let firstname = /[a-zA-ZÀ-ÿ]/;
 
-let nom = document.getElementById("nom");
-let name = /[a-zA-Z]/;
+    let nom = document.getElementById("nom");
+    let name = /[a-zA-Z]/;
 
-let adresse = document.getElementById("adresse");
-let boxmail = /[a-zA-Z0-9_]/;
+    let adresse = document.getElementById("adresse");
+    let boxmail = /[a-zA-Z0-9_]/;
 
-let ville = document.getElementById("ville");
-let city = /[a-zA-Z]/;
+    let ville = document.getElementById("ville");
+    let city = /[a-zA-Z]/;
 
-let mail = document.getElementById("mail");
-let email = /[a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,4}/;
+    let mail = document.getElementById("mail");
+    let email = /[a-z0-9._%+-]+@[a-z0-9.-]+[.][a-z]{2,4}/;
 
 
 

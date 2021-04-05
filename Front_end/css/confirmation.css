@@ -32,8 +32,29 @@ body {
     font-size: 25px;
     width: 40px;  
 }
-/* VALIDATION DE LA COMMANDE */
-.validation {
+/* CONFIRMATION DE LA COMMANDE */
+
+.confirmation{
+    margin-bottom: 3%;
+    background: rgb(163, 233, 135);
+    border-radius: 10px;
+    
+}
+
+.confirmation .big_title, .purchase_id{
+    text-align: center;
+}
+
+.purchase_id{
+    font-size: 1.2em;
+    margin-top: 2%;
+}
+
+#purchase{
+    margin: 40px auto 0;
+    width: 50%
+}
+/*.validation {
 
     background: rgb(163, 233, 135);
     margin: 0 200px 0 200px;
@@ -58,7 +79,7 @@ body {
     color: rgb(7, 59, 7);
     font-size: 15px;
     
-}
+}*/
 /* FOOTER */
 
 footer {

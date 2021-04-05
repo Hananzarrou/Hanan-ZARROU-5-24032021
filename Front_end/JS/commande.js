@@ -141,16 +141,10 @@ document.getElementById("myform").addEventListener("submit", (e) => {
     }
 
     if(erreur) {
-
-       
         document.getElementById("erreur").innerHTML = erreur;
-
-
     }
     else {
-
         alert('PAYMENT PRÊT À ÊTRE ENVOYÉ');
-
     }
 
     let contact = {

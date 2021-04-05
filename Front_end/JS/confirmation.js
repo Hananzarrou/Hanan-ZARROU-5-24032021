@@ -1,10 +1,22 @@
 //recuperation de commande
-const order = JSON.parse(localStorage.getItem('order'))
-console.log(order)
+let monPanier = localStorage.getItem("panier");
+let panierTotal = JSON.parse(monPanier);
+console.log('panierTotal', panierTotal);
 
-const contact = order.contact
-const products = order.products
-const orderId =  order.orderId
+let firstName = document.getElementById("prenom");
+
+let lastName = document.getElementById("nom");
+
+
+
+let contact = {
+    
+    prenom: "",
+    nom: "",
+};
+/*let contact = panierTotal.contact*/
+let products = panierTotal.products
+let orderId =  panierTotal.orderId
 
 // remplacement des variable
 let HTMLOrder = document.getElementById("confirmation_text")
@@ -17,7 +29,11 @@ let totalPrice = document.getElementById("total_price")
 let newTotalPrice = 0
 
 // modification de text
-myHTMLOrder = `<h1 class="big_title">Merci ${contact.firstName} ${contact.lastName} pour votre commande. Voici l'identifiant votre achat : <br></h1>
+
+
+
+
+myHTMLOrder = `<h1 class="big_title">Merci ${contact.firstName} ${contact.lastName} pour votre commande. Voici l'identifiant de votre achat : <br></h1>
 				<p class="purchase_id">${orderId}</p>`
 
 HTMLOrder.innerHTML = myHTMLOrder
@@ -27,7 +43,7 @@ products.forEach(article_order =>{
 
 	// modification du prix
 	let originalPrice = article_order.price /100
-  	let newPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(originalPrice)
+  	let newPrice = new Intl.NumberFormat('fr-FR', { style: 'popins', currency: 'EUR' }).format(originalPrice)
 
   	// modification html
   	myHTMLArticles += `<div class="ordered_article">

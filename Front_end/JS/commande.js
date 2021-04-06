@@ -29,16 +29,16 @@ for(let i = 0; i < panierTotal.length; i++) {
     ligne.appendChild(cell1);
     cell2.textContent = panierTotal[i].price + " €";
 
-
+// BOUTTON "SUPPRIMER" //
     boutton.addEventListener("click", function() {
-        panierTotal.splice(i)
+        panierTotal.splice(i, 1)
         localStorage.setItem("panier", JSON.stringify(panierTotal))
         window.location.reload()
 
 
     });
 };
-
+// INDIQUER LE PRIX TOTAL DES COMMANDES //
 let prixTotal = [];
 
 for (let m = 0; m < panierTotal.length; m++) {
@@ -60,9 +60,25 @@ const affichage = `<th class= "prixTotal">${prix} €</th>`
 thead2.insertAdjacentHTML("beforeend", affichage);
 
 
-// FORMULAIRE //
+// FORMULAIR//
+let testPassed = 0;
 
-document.getElementById("myform").addEventListener("submit", (e) => {
+function myFun() {
+
+    firstName = document.getElementById('firstname'),
+    lastName = document.getElementById('lastname'),
+    address = document.getElementById('address'),
+    email = document.getElementById('email'),
+    city = document.getElementById('city'),
+    message = document.getElementsByClassName('message'),
+    icon = document.querySelector('i');
+    sucess = document.getElementsByClassName('sucess'),
+    error = document.getElementsByClassName('error')
+
+    testPassed = 0;
+
+
+/*document.getElementById("myform").addEventListener("submit", (e) => {
     e.preventDefault();
 
     let erreur;
@@ -196,4 +212,4 @@ document.getElementById("myform").addEventListener("submit", (e) => {
 
     .catch(err => console.log("erreur : " + response.status))
 
-});
+});*/

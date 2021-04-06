@@ -1,5 +1,21 @@
+let total = localStorage.getItem("total");
+let resultat = JSON.parse(total);
+
+let commande = localStorage.getItem("id");
+let identite = JSON.parse(commande);
+console.log(identite)
+
+
+let div = document.createElement('div');
+div.id = "div1";
+let validationCommande = document.createElement("p")
+validationCommande.textContent = identite;
+let validation = document.getElementById("div1");
+validation.appendChild(validationCommande);
+
+
 //recuperation de commande
-let monPanier = localStorage.getItem("panier");
+/*let monPanier = localStorage.getItem("panier");
 let panierTotal = JSON.parse(monPanier);
 console.log('panierTotal', panierTotal);
 
@@ -14,7 +30,7 @@ let contact = {
     prenom: "",
     nom: "",
 };
-/*let contact = panierTotal.contact*/
+let contact = panierTotal.contact
 let products = panierTotal.products
 let orderId =  panierTotal.orderId
 
@@ -43,7 +59,7 @@ products.forEach(article_order =>{
 
 	// modification du prix
 	let originalPrice = article_order.price /100
-  	let newPrice = new Intl.NumberFormat('fr-FR', { style: 'popins', currency: 'EUR' }).format(originalPrice)
+  	let newPrice = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(originalPrice)
 
   	// modification html
   	myHTMLArticles += `<div class="ordered_article">
@@ -61,6 +77,6 @@ products.forEach(article_order =>{
 
 	HTMLArticles.innerHTML = myHTMLArticles
 	totalPrice.innerHTML = new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(newTotalPrice/100)
-})
+})*/
 
 

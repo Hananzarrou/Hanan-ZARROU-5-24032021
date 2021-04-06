@@ -32,9 +32,9 @@ body {
     font-size: 25px;
     width: 40px;  
 }
-/* CONFIRMATION DE LA COMMANDE */
 
-.confirmation{
+
+/*.confirmation{
     margin-bottom: 3%;
     background: rgb(163, 233, 135);
     border-radius: 10px;
@@ -53,8 +53,10 @@ body {
 #purchase{
     margin: 40px auto 0;
     width: 50%
-}
-/*.validation {
+}*/
+
+/* CONFIRMATION DE LA COMMANDE */
+.validation {
 
     background: rgb(163, 233, 135);
     margin: 0 200px 0 200px;
@@ -79,7 +81,7 @@ body {
     color: rgb(7, 59, 7);
     font-size: 15px;
     
-}*/
+}
 /* FOOTER */
 
 footer {

@@ -79,7 +79,6 @@ function myFun() {
 
 // VALIDATION POUR LE PRENOM //
 
-
 if(firstName.value == "") {
 
     firstName.style.borderColor = 'red';
@@ -88,10 +87,7 @@ if(firstName.value == "") {
     message[0].innerText = 'Merci d indiquer votre prénom';
     error[0].style.visibility = 'visible';
     error[0].style.color = 'red';
-    
-
 }
-
 else if(firstName.value.length < 3&&firstName.value.length > 0) {
 
     firstName.style.borderColor = 'red';
@@ -99,12 +95,9 @@ else if(firstName.value.length < 3&&firstName.value.length > 0) {
     message[0].style.color = 'red';
     message[0].innerText = 'Votre prénom doit comptenir au moins trois lettres';
     error[0].style.visibility = 'visible';
-    error[0].style.color = 'red';
-
-    
+    error[0].style.color = 'red';   
 
 }
-
 else if(firstName.value.length > 3&&(isNaN(parseFloat(firstName.value)))) {
 
     firstName.style.borderColor = 'green';
@@ -116,7 +109,6 @@ else if(firstName.value.length > 3&&(isNaN(parseFloat(firstName.value)))) {
     testPassed++;
 
 }
-
 else {
 
     firstName.style.borderColor = 'red';
@@ -125,11 +117,9 @@ else {
     message[0].innerText = 'Votre prénom ne doit pas comptenir des chifres';
     error[0].style.visibility = 'visible';
     error[0].style.color = 'red';
-
 }
 
 // VALIDATION POUR LE NOM //
-
 
 if(lastName.value == "") {
 
@@ -139,10 +129,7 @@ if(lastName.value == "") {
     message[1].innerText = 'Merci d indiquer votre nom';
     error[1].style.visibility = 'visible';
     error[1].style.color = 'red';
-    
-
 }
-
 else if(lastName.value.length < 3&&lastName.value.length > 0) {
 
     lastName.style.borderColor = 'red';
@@ -151,10 +138,7 @@ else if(lastName.value.length < 3&&lastName.value.length > 0) {
     message[1].innerText = 'Votre nom doit comptenir au moins trois lettres';
     error[1].style.visibility = 'visible';
     error[1].style.color = 'red';
-
-
 }
-
 else if(lastName.value.length > 3&&(isNaN(parseFloat(lastName.value)))) {
 
     lastName.style.borderColor = 'green';
@@ -164,9 +148,7 @@ else if(lastName.value.length > 3&&(isNaN(parseFloat(lastName.value)))) {
     sucess[1].style.color = 'green';
 
     testPassed++;
-
 }
-
 else {
 
     lastName.style.borderColor = 'red';
@@ -175,7 +157,6 @@ else {
     message[1].innerText = 'Votre nom ne doit pas comptenir des chifres';
     error[1].style.visibility = 'visible';
     error[1].style.color = 'red';
-
 }
 
 // VALIDATION POUR L'ADRESSE POSTALE //
@@ -207,8 +188,166 @@ else {
     sucess[2].style.color = 'green';
 
     testPassed++;
+}
+
+// VALIDATION POUR L'ADRESSE MAIL //
+    
+    if(email.value=="") {
+
+        email.style.borderColor = 'red';
+        message[3].style.visibility = 'visible';
+        message[3].style.color = 'red';
+        message[3].innerText = 'Merci d indiquer votre adresse mail';
+        error[3].style.visibility = 'visible';
+        error[3].style.color = 'red';
+    }
+
+    else if(email.value.indexOf('@') < 3 || email.value.lastIndexOf('.') >= email.value.length - 2) {
+
+        email.style.borderColor = 'red';
+        message[3].style.visibility = 'visible';
+        message[3].style.color = 'red';
+        message[3].innerText = 'Adresse mail non valide';
+        error[3].style.visibility = 'visible';
+        error[3].style.color = 'red';
+    }
+    else {
+
+        email.style.borderColor = 'green';
+        error[3].style.visibility = 'hidden';
+        message[3].style.visibility = 'hidden';
+        sucess[3].style.visibility = 'visible';
+        sucess[3].style.color = 'green';
+
+        testPassed++;
+    }
+
+    // VALIDATION POUR LA VILLE //
+
+    if(city.value == "") {
+
+        city.style.borderColor = 'red';
+        message[4].style.visibility = 'visible';
+        message[4].style.color = 'red';
+        message[4].innerText = 'Merci d indiquer votre ville';
+        error[4].style.visibility = 'visible';
+        error[4].style.color = 'red';
+    }
+
+    else if(city.value.length < 3&&city.value.length > 0) {
+
+        city.style.borderColor = 'red';
+        message[4].style.visibility = 'visible';
+        message[4].style.color = 'red';
+        message[4].innerText = 'Votre nom de la ville doit comptenir au moins 3 lettres';
+        error[4].style.visibility = 'visible';
+        error[4].style.color = 'red';
+    }
+    
+    else if(city.value.length > 3&&(isNaN(parseFloat(city.value)))) {
+
+        city.style.borderColor = 'green';
+        error[4].style.visibility = 'hidden';
+        message[4].style.visibility = 'hidden';
+        sucess[4].style.visibility = 'visible';
+        sucess[4].style.color = 'green';
+
+        testPassed++;
+
+    }
+
+    else {
+        city.style.borderColor = 'red';
+        message[4].style.visibility = 'visible';
+        message[4].style.color = 'red';
+        message[4].innerText = 'Votre nom de la ville ne doit pas comptenir des chifres';
+        error[4].style.visibility = 'visible';
+        error[4].style.color = 'red';
+    }
+    return false;
 
 }
+
+// ENVOYER LE FORMULAIRE AU SERVEUR DE L'API //
+
+// METHODE POST //
+let myform = document.getElementById("myform");
+        
+
+    myform.addEventListener("submit", (e) => {
+        
+        e.preventDefault()
+        myFun();
+
+
+        let input = document.getElementsByTagName("input");
+        if(testPassed == input.length) {
+
+        const contact = {
+        
+            firstName: document.getElementById('firstname').value,
+            lastName: document.getElementById('lastname').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            email: document.getElementById('email').value,
+
+        }
+        const products = [];
+        
+            for(let i = 0; i < panierTotal.length; i++) {
+                products.push(panierTotal[i].id);
+                localStorage.setItem("id", JSON.stringify(products)); 
+            };
+
+        const command = 
+
+            JSON.stringify({
+                
+            "contact": contact,
+            "products": products
+        });
+        
+            console.log(command)
+
+
+    
+function data() {
+
+    fetch('http://localhost:3000/api/cameras/order', {
+
+        method: "POST",
+
+        headers: {
+
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(command),
+        
+    })
+
+
+    .then(response => response.json())
+    
+        window.location.href = 'confirmation.html';
+    }
+
+    
+    } else {
+
+        console.error("Ce formulaire est invalide !");
+
+    }
+
+
+
+data()
+
+
+});
+
+
+
 
 
 

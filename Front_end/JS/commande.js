@@ -178,6 +178,38 @@ else {
 
 }
 
+// VALIDATION POUR L'ADRESSE POSTALE //
+
+
+if(address.value=="") {
+
+    address.style.borderColor = 'red';
+    message[2].style.visibility = 'visible';
+    message[2].style.color = 'red';
+    message[2].innerText = 'Merci d indiquer votre adresse postale';
+    error[2].style.visibility = 'visible';
+    error[2].style.color = 'red';
+}
+else if(address.value.length < 3&&address.value.length > 0) {
+
+    address.style.borderColor = 'red';
+    message[2].style.visibility = 'visible';
+    message[2].style.color = 'red';
+    message[2].innerText = 'Votre adresse doit comptenir au moins 3 lettres';
+    error[2].style.visibility = 'visible';
+    error[2].style.color = 'red';
+}
+else {
+    address.style.borderColor = 'green';
+    error[2].style.visibility = 'hidden';
+    message[2].style.visibility = 'hidden';
+    sucess[2].style.visibility = 'visible';
+    sucess[2].style.color = 'green';
+
+    testPassed++;
+
+}
+
 
 
 /*document.getElementById("myform").addEventListener("submit", (e) => {

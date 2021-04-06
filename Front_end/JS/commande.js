@@ -128,6 +128,57 @@ else {
 
 }
 
+// VALIDATION POUR LE NOM //
+
+
+if(lastName.value == "") {
+
+    lastName.style.borderColor = 'red';
+    message[1].style.visibility = 'visible';
+    message[1].style.color = 'red';
+    message[1].innerText = 'Merci d indiquer votre nom';
+    error[1].style.visibility = 'visible';
+    error[1].style.color = 'red';
+    
+
+}
+
+else if(lastName.value.length < 3&&lastName.value.length > 0) {
+
+    lastName.style.borderColor = 'red';
+    message[1].style.visibility = 'visible';
+    message[1].style.color = 'red';
+    message[1].innerText = 'Votre nom doit comptenir au moins trois lettres';
+    error[1].style.visibility = 'visible';
+    error[1].style.color = 'red';
+
+
+}
+
+else if(lastName.value.length > 3&&(isNaN(parseFloat(lastName.value)))) {
+
+    lastName.style.borderColor = 'green';
+    error[1].style.visibility = 'hidden';
+    message[1].style.visibility = 'hidden';
+    sucess[1].style.visibility = 'visible';
+    sucess[1].style.color = 'green';
+
+    testPassed++;
+
+}
+
+else {
+
+    lastName.style.borderColor = 'red';
+    message[1].style.visibility = 'visible';
+    message[1].style.color = 'red';
+    message[1].innerText = 'Votre nom ne doit pas comptenir des chifres';
+    error[1].style.visibility = 'visible';
+    error[1].style.color = 'red';
+
+}
+
+
 
 /*document.getElementById("myform").addEventListener("submit", (e) => {
     e.preventDefault();

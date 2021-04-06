@@ -13,6 +13,28 @@ validationCommande.textContent = identite;
 let validation = document.getElementById("div1");
 validation.appendChild(validationCommande);
 
+// remplacement des variable
+let HTMLOrder = document.getElementById("div1")
+let myHTMLOrder = ""
+
+let HTMLArticles = document.getElementById("div1")
+let myHTMLArticles = ""
+
+// modification de text
+
+myHTMLOrder = `<h1>
+<i class="fas fa-check"></i>    
+Nous vous remercions 
+  ${contact.firstName} ${contact.lastName} pour votre commande. Voici l'identifiant de votre achat : <br></h1>
+  <p>Votre Commande a été effectuée avec succes <br>Vous recevrez votre commande dans les plus bref délais </p>`
+
+HTMLOrder.innerHTML = myHTMLOrder
+
+
+
+
+
+
 
 //recuperation de commande
 /*let monPanier = localStorage.getItem("panier");
@@ -34,25 +56,6 @@ let contact = panierTotal.contact
 let products = panierTotal.products
 let orderId =  panierTotal.orderId
 
-// remplacement des variable
-let HTMLOrder = document.getElementById("confirmation_text")
-let myHTMLOrder = ""
-
-let HTMLArticles = document.getElementById("purchase_articles")
-let myHTMLArticles = ""
-
-let totalPrice = document.getElementById("total_price")
-let newTotalPrice = 0
-
-// modification de text
-
-
-
-
-myHTMLOrder = `<h1 class="big_title">Merci ${contact.firstName} ${contact.lastName} pour votre commande. Voici l'identifiant de votre achat : <br></h1>
-				<p class="purchase_id">${orderId}</p>`
-
-HTMLOrder.innerHTML = myHTMLOrder
 
 // recuperation commande
 products.forEach(article_order =>{

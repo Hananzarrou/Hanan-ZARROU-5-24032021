@@ -77,6 +77,57 @@ function myFun() {
 
     testPassed = 0;
 
+// VALIDATION POUR LE PRENOM //
+
+
+if(firstName.value == "") {
+
+    firstName.style.borderColor = 'red';
+    message[0].style.visibility = 'visible';
+    message[0].style.color = 'red';
+    message[0].innerText = 'Merci d indiquer votre prénom';
+    error[0].style.visibility = 'visible';
+    error[0].style.color = 'red';
+    
+
+}
+
+else if(firstName.value.length < 3&&firstName.value.length > 0) {
+
+    firstName.style.borderColor = 'red';
+    message[0].style.visibility = 'visible';
+    message[0].style.color = 'red';
+    message[0].innerText = 'Votre prénom doit comptenir au moins trois lettres';
+    error[0].style.visibility = 'visible';
+    error[0].style.color = 'red';
+
+    
+
+}
+
+else if(firstName.value.length > 3&&(isNaN(parseFloat(firstName.value)))) {
+
+    firstName.style.borderColor = 'green';
+    error[0].style.visibility = 'hidden';
+    message[0].style.visibility = 'hidden';
+    sucess[0].style.visibility = 'visible';
+    sucess[0].style.color = 'green';
+
+    testPassed++;
+
+}
+
+else {
+
+    firstName.style.borderColor = 'red';
+    message[0].style.visibility = 'visible';
+    message[0].style.color = 'red';
+    message[0].innerText = 'Votre prénom ne doit pas comptenir des chifres';
+    error[0].style.visibility = 'visible';
+    error[0].style.color = 'red';
+
+}
+
 
 /*document.getElementById("myform").addEventListener("submit", (e) => {
     e.preventDefault();

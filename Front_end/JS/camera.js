@@ -1,6 +1,7 @@
 // RECUPERATION DE L'ID DANS L'URL
 const urlCamera = new URLSearchParams(window.location.search);
 const idCamera = urlCamera.get("id");
+//console.log(idCamera)//
 
 //FONCTION POUR RECUPERER UN CAMERA PAR SON ID UNIQUE 
 function getCamera(data, idCamera) {

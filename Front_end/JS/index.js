@@ -4,7 +4,7 @@ fetch('http://localhost:3000/api/cameras')
     .then(data => {
 
         
- // UNE BOUCLE FOR POUR ITERER 5 CARTES
+ // UNE BOUCLE FOR POUR STRUCTURER LES 5 CARTES
         for(let i = 0; i < data.length; i++) {
 // STRUCTURE HTML DES CARTES
         
@@ -36,13 +36,13 @@ fetch('http://localhost:3000/api/cameras')
             camera.appendChild(produit);
 //FONCTION DE RECUPERATION DE L'URL PAGE CAMERA    
 
-function url() {
+/*function url() {
 
     //récupération de l'id de chaque camera
             let getUrl = "?id=" + data[i]._id; 
     //redirection vers la page de camera 
             window.location.href = "./Front_end/camera.html" + getUrl;
-}
+}*/
 
 //ECOUTE DE L'EVENEMENT AU CLIC DU BOUTON  
 //au clic, le bouton exécute la fonction
@@ -58,7 +58,7 @@ function url() {
         console.log(data);
 
 })
-
+// LE CATCH PERMET D'EVITER LE BUG DE L'APPLICATION EN CAS D'ERREUR //
 .catch(error => alert("Erreur : " + error));
 
 

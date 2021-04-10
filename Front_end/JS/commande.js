@@ -1,3 +1,4 @@
+//RECUPERATION DES CAMERAS DANS LE PANIER  ET TRADUCTION DU LANGAGE EN JSON//
 let monPanier = localStorage.getItem("panier");
 let panierTotal = JSON.parse(monPanier);
 console.log('panierTotal', panierTotal);
@@ -5,55 +6,55 @@ console.log('panierTotal', panierTotal);
 
 
 // PANIER //
-
+// UNE BOUCLE "FOR" POUR AFFICHER LES INFORMATIONS DE CHAQUE CAMERA DANS LE PANIER //
 for(let i = 0; i < panierTotal.length; i++) {
 
+    // INSERTION DU TABLEAU //
     let monTableau = document.getElementById("table");
     let ligne = monTableau.insertRow();
     tbody.appendChild(ligne);
 
+    // AFFICHER LE NOM DE CHAQUE CAMERAS //
     let cell = ligne.insertCell(0);
     ligne.appendChild(cell);
     cell.textContent = panierTotal[i].name;
 
+    // CREATION DU BOUTTON "SUPPRIMER" //
     let cell1 = ligne.insertCell(1);
     ligne.appendChild(cell1);
     let boutton = document.createElement("button");
     boutton.setAttribute("id", panierTotal[i].id);
-
-
     cell1.appendChild(boutton);
     boutton.textContent = "Supprimer";
 
+    // PRIX TOTAL EN EUROS//
     let cell2 = ligne.insertCell(2);
     ligne.appendChild(cell1);
     cell2.textContent = panierTotal[i].price + " €";
 
-// BOUTTON "SUPPRIMER" //
+// CREATION DU BOUTTON "SUPPRIMER" QUI PERMET DE SUPRIMER N'IMPORTE QUEL CAMERA QUI SE TROUVE DANS LE PANIER //
     boutton.addEventListener("click", function() {
         panierTotal.splice(i, 1)
         localStorage.setItem("panier", JSON.stringify(panierTotal))
         window.location.reload()
-
-
     });
 };
 // INDIQUER LE PRIX TOTAL DES COMMANDES //
 let prixTotal = [];
-
+//L UTILISATION DE LA BOUCLE "FOR" POUR REPRENDRE TOUS LES PRIX DES CAMERAS PRESENTES DANS LE PANIER //
 for (let m = 0; m < panierTotal.length; m++) {
     let prixProduit = panierTotal[m].price;
 
     prixTotal.push(prixProduit)
 
     console.log(prixTotal);
-
 }
-
+// L4UTILISATION DU "REDUCER" PERMET D'ADDITIONNER TOUS LES PRIX DES CAMERAS PRESENTS DANS LE PANIER POUR FAIRE LE TOTAL //
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const prix = prixTotal.reduce(reducer, 0);
 console.log(prix);
-
+//lA RECUPERATION DU TOTAL DANS LE LOCAL STORAGE//
+localStorage.setItem("total", JSON.stringify(prix));
 const affichage = `<th class= "prixTotal">${prix} €</th>`
 
 
@@ -61,20 +62,21 @@ thead2.insertAdjacentHTML("beforeend", affichage);
 
 
 // FORMULAIR//
+// CODE PERMETTANT DE REAGIR EN FONCTION DE CE QUE L'UTILISATEUR MET DANS LES CHAMPS DU FORMULAIRE EN METTANT DES CONDITIONS AVEC "IF" ET "ELSE" //
 let testPassed = 0;
 
 
 function myFun() {
 
-    firstName = document.getElementById('firstname'),
-    lastName = document.getElementById('lastname'),
-    address = document.getElementById('address'),
-    email = document.getElementById('email'),
-    city = document.getElementById('city'),
-    message = document.getElementsByClassName('message'),
-    icon = document.querySelector('i');
-    sucess = document.getElementsByClassName('sucess'),
-    error = document.getElementsByClassName('error')
+    (firstName = document.getElementById('firstname')),
+    (lastName = document.getElementById('lastname')),
+    (address = document.getElementById('address')),
+    (email = document.getElementById('email')),
+    (city = document.getElementById('city')),
+    (message = document.getElementsByClassName('message')),
+    (icon = document.querySelector('i'));
+    (sucess = document.getElementsByClassName('sucess')),
+    (error = document.getElementsByClassName('error'));
 
     testPassed = 0;
 
@@ -88,8 +90,7 @@ if(firstName.value == "") {
     message[0].innerText = 'Merci d indiquer votre prénom';
     error[0].style.visibility = 'visible';
     error[0].style.color = 'red';
-}
-else if(firstName.value.length < 3&&firstName.value.length > 0) {
+}else if(firstName.value.length < 3&&firstName.value.length > 0) {
 
     firstName.style.borderColor = 'red';
     message[0].style.visibility = 'visible';
@@ -98,8 +99,7 @@ else if(firstName.value.length < 3&&firstName.value.length > 0) {
     error[0].style.visibility = 'visible';
     error[0].style.color = 'red';   
 
-}
-else if(firstName.value.length > 3&&(isNaN(parseFloat(firstName.value)))) {
+}else if(firstName.value.length > 3&&(isNaN(parseFloat(firstName.value)))) {
 
     firstName.style.borderColor = 'green';
     error[0].style.visibility = 'hidden';
@@ -109,8 +109,7 @@ else if(firstName.value.length > 3&&(isNaN(parseFloat(firstName.value)))) {
 
     testPassed++;
 
-}
-else {
+}else {
 
     firstName.style.borderColor = 'red';
     message[0].style.visibility = 'visible';
@@ -284,15 +283,18 @@ let myform = document.getElementById("myform");
         let input = document.getElementsByTagName("input");
         if(testPassed == input.length) {
 
-        const contact = {
+            const contact = {
         
-            firstName: document.getElementById('firstname').value,
-            lastName: document.getElementById('lastname').value,
-            address: document.getElementById('address').value,
-            city: document.getElementById('city').value,
-            email: document.getElementById('email').value,
+                firstName: document.getElementById('firstname').value,
+                lastName: document.getElementById('lastname').value,
+                address: document.getElementById('address').value,
+                city: document.getElementById('city').value,
+                email: document.getElementById('email').value,
 
-        }
+        };
+
+        localStorage.setItem("validation", JSON.stringify(contact));
+
         const products = [];
         
             for(let i = 0; i < panierTotal.length; i++) {
@@ -300,57 +302,51 @@ let myform = document.getElementById("myform");
                 localStorage.setItem("id", JSON.stringify(products)); 
             };
 
-        const command = 
+        const command = {
 
-            JSON.stringify({
+            //JSON.stringify({}//
                 
-            "contact": contact,
-            "products": products
-        });
+            contact: contact,
+            products: products,
+        };
         
-            console.log(command)
+        console.log(command)
 
 
     
-function data() {
+        function data() {
 
-    fetch('http://localhost:3000/api/cameras/order', {
-
-        method: "POST",
-
-        headers: {
-
-            "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify(command),
+            fetch("http://localhost:3000/api/cameras/order", {
+      
+              method: "POST",
+      
+              headers: {
+      
+                "Content-Type": "application/json",
+              },
+      
+              body: JSON.stringify(command),
+      
+            })
+            
+            //promesse //
+            .then((response) => response.json()) 
+            //aboutissement de la promesse //
+            .then(response => {
+      
+              console.log(response);
+      
+          });
+        }
+      
+        } else {
+      
+          console.error("Ce formulaire est invalide !");
+        }
+        data();
         
-    })
-
-
-    .then(response => response.json())
-    
-        window.location.href = 'confirmation.html';
-    }
-
-    
-    } else {
-
-        console.error("Ce formulaire est invalide !");
-
-    }
-
-
-
-data()
-
-
-});
-
-
-
-
-
+      });
+      
 
 /*document.getElementById("myform").addEventListener("submit", (e) => {
     e.preventDefault();

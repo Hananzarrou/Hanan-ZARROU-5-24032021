@@ -19,7 +19,7 @@ validationCommande.appendChild(div);
 
 let p = document.createElement("p");
 div.appendChild(p);
-p.textContent = "Votre récapitulatif de votre commande"
+p.textContent = "Vous trouvez un récapitulatif de votre commande"
 
 let pcontact = document.createElement("p");
 div.appendChild(pcontact);
@@ -27,7 +27,7 @@ pcontact.textContent = contact;
 
 let paragraphe = document.createElement("p");
 div.appendChild(paragraphe);
-paragraphe.textContent = "Numéro de votre commande"
+paragraphe.textContent = "vous trouvez l'identifiant de votre commande"
 
 
 let validationCommande = document.createElement("p")
@@ -44,6 +44,7 @@ let validationTotal = document.createElement("p")
 validationTotal.textContent = resultat + " €";
 
 validation.appendChild(validationTotal);
+
 // remplacement des variable
 /*let HTMLOrder = document.getElementById("div1")
 let myHTMLOrder = ""

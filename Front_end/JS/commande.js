@@ -1,7 +1,7 @@
 //RECUPERATION DES CAMERAS DANS LE PANIER  ET TRADUCTION DU LANGAGE EN JSON//
 let monPanier = localStorage.getItem("panier");
 let panierTotal = JSON.parse(monPanier);
-console.log('panierTotal', panierTotal);
+console.log(panierTotal)
 
 
 
@@ -25,14 +25,14 @@ for(let i = 0; i < panierTotal.length; i++) {
     let boutton = document.createElement("button");
     boutton.setAttribute("id", panierTotal[i].id);
     cell1.appendChild(boutton);
-    boutton.textContent = "Supprimer";
+    boutton.textContent = "Supprimer l article";
 
     // PRIX TOTAL EN EUROS//
     let cell2 = ligne.insertCell(2);
     ligne.appendChild(cell1);
     cell2.textContent = panierTotal[i].price + " €";
 
-// CREATION DU BOUTTON "SUPPRIMER" QUI PERMET DE SUPRIMER N'IMPORTE QUEL CAMERA QUI SE TROUVE DANS LE PANIER //
+// CREATION DU BOUTTON "SUPPRIMER" QUI PERMET DE SUPRIMER N"IMPORTE QUEL CAMERA QUI SE TROUVE DANS LE PANIER //
     boutton.addEventListener("click", function() {
         panierTotal.splice(i, 1)
         localStorage.setItem("panier", JSON.stringify(panierTotal))
@@ -49,7 +49,7 @@ for (let m = 0; m < panierTotal.length; m++) {
 
     console.log(prixTotal);
 }
-// L4UTILISATION DU "REDUCER" PERMET D'ADDITIONNER TOUS LES PRIX DES CAMERAS PRESENTS DANS LE PANIER POUR FAIRE LE TOTAL //
+// L4UTILISATION DU "REDUCER" PERMET D"ADDITIONNER TOUS LES PRIX DES CAMERAS PRESENTS DANS LE PANIER POUR FAIRE LE TOTAL //
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const prix = prixTotal.reduce(reducer, 0);
 console.log(prix);
@@ -62,21 +62,20 @@ thead2.insertAdjacentHTML("beforeend", affichage);
 
 
 // FORMULAIR//
-// CODE PERMETTANT DE REAGIR EN FONCTION DE CE QUE L'UTILISATEUR MET DANS LES CHAMPS DU FORMULAIRE EN METTANT DES CONDITIONS AVEC "IF" ET "ELSE" //
+// CODE PERMETTANT DE REAGIR EN FONCTION DE CE QUE L"UTILISATEUR MET DANS LES CHAMPS DU FORMULAIRE EN METTANT DES CONDITIONS AVEC "IF" ET "ELSE" //
 let testPassed = 0;
-
 
 function myFun() {
 
-    (firstName = document.getElementById('firstname')),
-    (lastName = document.getElementById('lastname')),
-    (address = document.getElementById('address')),
-    (email = document.getElementById('email')),
-    (city = document.getElementById('city')),
-    (message = document.getElementsByClassName('message')),
-    (icon = document.querySelector('i'));
-    (sucess = document.getElementsByClassName('sucess')),
-    (error = document.getElementsByClassName('error'));
+    (firstName = document.getElementById("firstname")),
+    (lastName = document.getElementById("lastname")),
+    (address = document.getElementById("address")),
+    (email = document.getElementById("email")),
+    (city = document.getElementById("city")),
+    (message = document.getElementsByClassName("message")),
+    (icon = document.querySelector("i"));
+    (sucess = document.getElementsByClassName("sucess")),
+    (error = document.getElementsByClassName("error"));
 
     testPassed = 0;
 
@@ -84,140 +83,137 @@ function myFun() {
 
 if(firstName.value == "") {
 
-    firstName.style.borderColor = 'red';
-    message[0].style.visibility = 'visible';
-    message[0].style.color = 'red';
-    message[0].innerText = 'Merci d indiquer votre prénom';
-    error[0].style.visibility = 'visible';
-    error[0].style.color = 'red';
+    firstName.style.borderColor = "red";
+    message[0].style.visibility = "visible";
+    message[0].style.color = "red";
+    message[0].innerText = "Merci d indiquer votre prénom";
+    error[0].style.visibility = "visible";
+    error[0].style.color = "red";
 }else if(firstName.value.length < 3&&firstName.value.length > 0) {
 
-    firstName.style.borderColor = 'red';
-    message[0].style.visibility = 'visible';
-    message[0].style.color = 'red';
-    message[0].innerText = 'Votre prénom doit comptenir au moins trois lettres';
-    error[0].style.visibility = 'visible';
-    error[0].style.color = 'red';   
+    firstName.style.borderColor = "red";
+    message[0].style.visibility = "visible";
+    message[0].style.color = "red";
+    message[0].innerText = "Votre prénom doit comptenir au moins trois lettres";
+    error[0].style.visibility = "visible";
+    error[0].style.color = "red";   
 
 }else if(firstName.value.length > 3&&(isNaN(parseFloat(firstName.value)))) {
 
-    firstName.style.borderColor = 'green';
-    error[0].style.visibility = 'hidden';
-    message[0].style.visibility = 'hidden';
-    sucess[0].style.visibility = 'visible';
-    sucess[0].style.color = 'green';
+    firstName.style.borderColor = "green";
+    error[0].style.visibility = "hidden";
+    message[0].style.visibility = "hidden";
+    sucess[0].style.visibility = "visible";
+    sucess[0].style.color = "green";
 
     testPassed++;
 
 }else {
 
-    firstName.style.borderColor = 'red';
-    message[0].style.visibility = 'visible';
-    message[0].style.color = 'red';
-    message[0].innerText = 'Votre prénom ne doit pas comptenir des chifres';
-    error[0].style.visibility = 'visible';
-    error[0].style.color = 'red';
+    firstName.style.borderColor = "red";
+    message[0].style.visibility = "visible";
+    message[0].style.color = "red";
+    message[0].innerText = "Votre prénom ne doit pas comptenir des chifres";
+    error[0].style.visibility = "visible";
+    error[0].style.color = "red";
 }
 
 // VALIDATION POUR LE NOM //
 
 if(lastName.value == "") {
 
-    lastName.style.borderColor = 'red';
-    message[1].style.visibility = 'visible';
-    message[1].style.color = 'red';
-    message[1].innerText = 'Merci d indiquer votre nom';
-    error[1].style.visibility = 'visible';
-    error[1].style.color = 'red';
+    lastName.style.borderColor = "red";
+    message[1].style.visibility = "visible";
+    message[1].style.color = "red";
+    message[1].innerText = "Merci d indiquer votre nom";
+    error[1].style.visibility = "visible";
+    error[1].style.color = "red";
 }
 else if(lastName.value.length < 3&&lastName.value.length > 0) {
 
-    lastName.style.borderColor = 'red';
-    message[1].style.visibility = 'visible';
-    message[1].style.color = 'red';
-    message[1].innerText = 'Votre nom doit comptenir au moins trois lettres';
-    error[1].style.visibility = 'visible';
-    error[1].style.color = 'red';
+    lastName.style.borderColor = "red";
+    message[1].style.visibility = "visible";
+    message[1].style.color = "red";
+    message[1].innerText = "Votre nom doit comptenir au moins trois lettres";
+    error[1].style.visibility = "visible";
+    error[1].style.color = "red";
 }
 else if(lastName.value.length > 3&&(isNaN(parseFloat(lastName.value)))) {
 
-    lastName.style.borderColor = 'green';
-    error[1].style.visibility = 'hidden';
-    message[1].style.visibility = 'hidden';
-    sucess[1].style.visibility = 'visible';
-    sucess[1].style.color = 'green';
+    lastName.style.borderColor = "green";
+    error[1].style.visibility = "hidden";
+    message[1].style.visibility = "hidden";
+    sucess[1].style.visibility = "visible";
+    sucess[1].style.color = "green";
 
     testPassed++;
 }
 else {
 
-    lastName.style.borderColor = 'red';
-    message[1].style.visibility = 'visible';
-    message[1].style.color = 'red';
-    message[1].innerText = 'Votre nom ne doit pas comptenir des chifres';
-    error[1].style.visibility = 'visible';
-    error[1].style.color = 'red';
+    lastName.style.borderColor = "red";
+    message[1].style.visibility = "visible";
+    message[1].style.color = "red";
+    message[1].innerText = "Votre nom ne doit pas comptenir des chifres";
+    error[1].style.visibility = "visible";
+    error[1].style.color = "red";
 }
 
-// VALIDATION POUR L'ADRESSE POSTALE //
+// VALIDATION POUR L"ADRESSE POSTALE //
 
 
 if(address.value=="") {
 
-    address.style.borderColor = 'red';
-    message[2].style.visibility = 'visible';
-    message[2].style.color = 'red';
-    message[2].innerText = 'Merci d indiquer votre adresse postale';
-    error[2].style.visibility = 'visible';
-    error[2].style.color = 'red';
+    address.style.borderColor = "red";
+    message[2].style.visibility = "visible";
+    message[2].style.color = "red";
+    message[2].innerText = "Merci d indiquer votre adresse postale";
+    error[2].style.visibility = "visible";
+    error[2].style.color = "red";
 }
 else if(address.value.length < 3&&address.value.length > 0) {
 
-    address.style.borderColor = 'red';
-    message[2].style.visibility = 'visible';
-    message[2].style.color = 'red';
-    message[2].innerText = 'Votre adresse doit comptenir au moins 3 lettres';
-    error[2].style.visibility = 'visible';
-    error[2].style.color = 'red';
+    address.style.borderColor = "red";
+    message[2].style.visibility = "visible";
+    message[2].style.color = "red";
+    message[2].innerText = "Votre adresse doit comptenir au moins 3 lettres";
+    error[2].style.visibility = "visible";
+    error[2].style.color = "red";
 }
 else {
-    address.style.borderColor = 'green';
-    error[2].style.visibility = 'hidden';
-    message[2].style.visibility = 'hidden';
-    sucess[2].style.visibility = 'visible';
-    sucess[2].style.color = 'green';
+    address.style.borderColor = "green";
+    error[2].style.visibility = "hidden";
+    message[2].style.visibility = "hidden";
+    sucess[2].style.visibility = "visible";
+    sucess[2].style.color = "green";
 
     testPassed++;
 }
 
-// VALIDATION POUR L'ADRESSE MAIL //
+// VALIDATION POUR L"ADRESSE MAIL //
     
     if(email.value=="") {
-
-        email.style.borderColor = 'red';
-        message[3].style.visibility = 'visible';
-        message[3].style.color = 'red';
-        message[3].innerText = 'Merci d indiquer votre adresse mail';
-        error[3].style.visibility = 'visible';
-        error[3].style.color = 'red';
+        email.style.borderColor = "red";
+        message[3].style.visibility = "visible";
+        message[3].style.color = "red";
+        message[3].innerText = "Merci d indiquer votre adresse mail";
+        error[3].style.visibility = "visible";
+        error[3].style.color = "red";
     }
 
-    else if(email.value.indexOf('@') < 3 || email.value.lastIndexOf('.') >= email.value.length - 2) {
-
-        email.style.borderColor = 'red';
-        message[3].style.visibility = 'visible';
-        message[3].style.color = 'red';
-        message[3].innerText = 'Adresse mail non valide';
-        error[3].style.visibility = 'visible';
-        error[3].style.color = 'red';
+    else if(email.value.indexOf("@") < 3 || email.value.lastIndexOf(".") >= email.value.length - 2) {
+        email.style.borderColor = "red";
+        message[3].style.visibility = "visible";
+        message[3].style.color = "red";
+        message[3].innerText = "Adresse mail non valide";
+        error[3].style.visibility = "visible";
+        error[3].style.color = "red";
     }
     else {
-
-        email.style.borderColor = 'green';
-        error[3].style.visibility = 'hidden';
-        message[3].style.visibility = 'hidden';
-        sucess[3].style.visibility = 'visible';
-        sucess[3].style.color = 'green';
+        email.style.borderColor = "green";
+        error[3].style.visibility = "hidden";
+        message[3].style.visibility = "hidden";
+        sucess[3].style.visibility = "visible";
+        sucess[3].style.color = "green";
 
         testPassed++;
     }
@@ -225,71 +221,68 @@ else {
     // VALIDATION POUR LA VILLE //
 
     if(city.value == "") {
-
-        city.style.borderColor = 'red';
-        message[4].style.visibility = 'visible';
-        message[4].style.color = 'red';
-        message[4].innerText = 'Merci d indiquer votre ville';
-        error[4].style.visibility = 'visible';
-        error[4].style.color = 'red';
+        city.style.borderColor = "red";
+        message[4].style.visibility = "visible";
+        message[4].style.color = "red";
+        message[4].innerText = "Merci d indiquer votre ville";
+        error[4].style.visibility = "visible";
+        error[4].style.color = "red";
     }
 
     else if(city.value.length < 3&&city.value.length > 0) {
-
-        city.style.borderColor = 'red';
-        message[4].style.visibility = 'visible';
-        message[4].style.color = 'red';
-        message[4].innerText = 'Votre nom de la ville doit comptenir au moins 3 lettres';
-        error[4].style.visibility = 'visible';
-        error[4].style.color = 'red';
+        city.style.borderColor = "red";
+        message[4].style.visibility = "visible";
+        message[4].style.color = "red";
+        message[4].innerText = "Votre nom de la ville doit comptenir au moins 3 lettres";
+        error[4].style.visibility = "visible";
+        error[4].style.color = "red";
     }
     
     else if(city.value.length > 3&&(isNaN(parseFloat(city.value)))) {
-
-        city.style.borderColor = 'green';
-        error[4].style.visibility = 'hidden';
-        message[4].style.visibility = 'hidden';
-        sucess[4].style.visibility = 'visible';
-        sucess[4].style.color = 'green';
+        city.style.borderColor = "green";
+        error[4].style.visibility = "hidden";
+        message[4].style.visibility = "hidden";
+        sucess[4].style.visibility = "visible";
+        sucess[4].style.color = "green";
 
         testPassed++;
 
     }
 
     else {
-        city.style.borderColor = 'red';
-        message[4].style.visibility = 'visible';
-        message[4].style.color = 'red';
-        message[4].innerText = 'Votre nom de la ville ne doit pas comptenir des chifres';
-        error[4].style.visibility = 'visible';
-        error[4].style.color = 'red';
+        city.style.borderColor = "red";
+        message[4].style.visibility = "visible";
+        message[4].style.color = "red";
+        message[4].innerText = "Votre nom de la ville ne doit pas comptenir des chifres";
+        error[4].style.visibility = "visible";
+        error[4].style.color = "red";
     }
     return false;
 
 }
 
-// ENVOYER LE FORMULAIRE AU SERVEUR DE L'API //
+// ENVOYER LE FORMULAIRE AU SERVEUR DE L"API //
 
 // METHODE POST //
 let myform = document.getElementById("myform");
         
 
-    myform.addEventListener("submit", (e) => {
+myform.addEventListener("submit", (e) => {
         
-        e.preventDefault()
-        myFun();
+    e.preventDefault()
+    myFun();
 
 
-        let input = document.getElementsByTagName("input");
-        if(testPassed == input.length) {
+    let input = document.getElementsByTagName("input");
+    if(testPassed == input.length) {
 
-            const contact = {
+        const contact = {
         
-                firstName: document.getElementById('firstname').value,
-                lastName: document.getElementById('lastname').value,
-                address: document.getElementById('address').value,
-                city: document.getElementById('city').value,
-                email: document.getElementById('email').value,
+            firstName: document.getElementById("firstname").value,
+            lastName: document.getElementById("lastname").value,
+            address: document.getElementById("address").value,
+            city: document.getElementById("city").value,
+            email: document.getElementById("email").value,
 
         };
 
@@ -297,10 +290,10 @@ let myform = document.getElementById("myform");
 
         const products = [];
         
-            for(let i = 0; i < panierTotal.length; i++) {
-                products.push(panierTotal[i].id);
-                localStorage.setItem("id", JSON.stringify(products)); 
-            };
+        for(let i = 0; i < panierTotal.length; i++) {
+            products.push(panierTotal[i].id);
+            localStorage.setItem("id", JSON.stringify(products)); 
+        }
 
         const command = {
 
@@ -313,7 +306,6 @@ let myform = document.getElementById("myform");
         console.log(command)
 
 
-    
         function data() {
 
             fetch("http://localhost:3000/api/cameras/order", {
@@ -345,7 +337,7 @@ let myform = document.getElementById("myform");
         }
         data();
         
-      });
+});
       
 
 /*document.getElementById("myform").addEventListener("submit", (e) => {
@@ -377,7 +369,7 @@ let myform = document.getElementById("myform");
 
     } else if (!city.test(ville)) {
 
-        erreur = "Ceci n'est pas le nom d'une ville";
+        erreur = "Ceci n"est pas le nom d"une ville";
 
 
     }
@@ -389,7 +381,7 @@ let myform = document.getElementById("myform");
 
     } else if (!email.test(mail.value)) {
 
-        erreur = "Ceci n'est pas un adresse mail valide";
+        erreur = "Ceci n"est pas un adresse mail valide";
 
 
     }
@@ -400,7 +392,7 @@ let myform = document.getElementById("myform");
 
     } else if (!boxmail.test(adresse.value)) {
 
-        erreur = "Ceci n'est pas un adresse postale";
+        erreur = "Ceci n"est pas un adresse postale";
 
     }
 
@@ -411,7 +403,7 @@ let myform = document.getElementById("myform");
 
     else if (!name.test(nom.value))  {
 
-        erreur = "Ceci n'est pas un nom de famille";
+        erreur = "Ceci n"est pas un nom de famille";
 
 
     }
@@ -423,14 +415,14 @@ let myform = document.getElementById("myform");
 
     } else if (!firstname.test(prenom.value)) {
 
-        erreur = "Ceci n'est pas un prénom";
+        erreur = "Ceci n"est pas un prénom";
     }
 
     if(erreur) {
         document.getElementById("erreur").innerHTML = erreur;
     }
     else {
-        alert('PAYMENT PRÊT À ÊTRE ENVOYÉ');
+        alert("PAYMENT PRÊT À ÊTRE ENVOYÉ");
     }
 
     let contact = {
@@ -461,7 +453,7 @@ let myform = document.getElementById("myform");
 
     }
 
- fetch('http://localhost:3000/api/cameras/order', {
+ fetch("http://localhost:3000/api/cameras/order", {
 
         method: "POST",
         headers: {
@@ -476,8 +468,8 @@ let myform = document.getElementById("myform");
 
     .then(response => response.json())
     .then((json) => {
-        console.log('response', json);
-        window.location.href = 'confirmation.html';
+        console.log("response", json);
+        window.location.href = "confirmation.html";
     })
 
     .catch(err => console.log("erreur : " + response.status))

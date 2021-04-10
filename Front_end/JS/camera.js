@@ -49,7 +49,7 @@ fetch('http://localhost:3000/api/cameras/' + idCamera)
     camera.appendChild(lentille);
     let myLenses = myCamera.lenses;
 
-//BOUCLE POUR CREER LES OPTIONS LENTILLES
+//BOUCLE FOR POUR CREER LES OPTIONS LENTILLES LISTES DEROULANTE//
 
     for(let i = 0; i < myLenses.length; i++) {
         let el = document.createElement("option");
@@ -63,7 +63,7 @@ fetch('http://localhost:3000/api/cameras/' + idCamera)
     boutton.textContent = `Ajouter au Panier`;
     camera.appendChild(boutton);
 
-//ECOUTE DE L'EVENEMENT AU CLIC DU BOUTON ARTICLE AJOUTE     
+//ECOUTE DE L'EVENEMENT AU CLIC DU BOUTON ARTICLE AJOUTE ET REDIRECTION VERS LA PAGE PANIER//    
     boutton.addEventListener('click', (e) => {
           
         const produit = {
@@ -76,24 +76,25 @@ fetch('http://localhost:3000/api/cameras/' + idCamera)
         };
 // on ajoute les produits au localStorage à chaque sélection
         let products = JSON.parse(localStorage.getItem("panier"))
-        
+        //AJOUT DES PRODUITS AU PANIER
         if(products) {
 
             products.push(produit)
             localStorage.setItem("panier", JSON.stringify(products))
 
         }
+        //SINON, CREER UN TABLEAU POUR METTRE LES PRODUITS DEDANS
         else {
 
             let produitList = []
             produitList.push(produit)
             localStorage.setItem("panier", JSON.stringify(produitList))
         }
-//LE NAVIGATEUR NE CHANGE PAS DE PAGE AVEC PREVENTDEFANT
+        //LE NAVIGATEUR NE CHANGE PAS DE PAGE AVEC PREVENTDEFANT
         e.preventDefault()
-        
+        //LEPRODUIT A BIEN ETE AJOUETER AU PANIER       
         alert("Votre produit a été ajoutée au panier");
-//REVOI 0 LA PAGE PANIER
+        //REVOI 0 LA PAGE PANIER
         window.location.href = 'panier.html';
          
     });

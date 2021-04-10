@@ -24,7 +24,6 @@ p.textContent = "Vous trouvez un récapitulatif de votre commande"
 let pcontact = document.createElement("p");
 div.appendChild(pcontact);
 pcontact.textContent = contact;
-
 let paragraphe = document.createElement("p");
 div.appendChild(paragraphe);
 paragraphe.textContent = "vous trouvez l'identifiant de votre commande"

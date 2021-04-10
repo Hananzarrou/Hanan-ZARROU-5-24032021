@@ -63,6 +63,7 @@ thead2.insertAdjacentHTML("beforeend", affichage);
 // FORMULAIR//
 let testPassed = 0;
 
+
 function myFun() {
 
     firstName = document.getElementById('firstname'),

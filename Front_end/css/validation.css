@@ -34,27 +34,6 @@ body {
 }
 
 
-/*.validation{
-    margin-bottom: 3%;
-    background: rgb(163, 233, 135);
-    border-radius: 10px;
-    
-}
-
-.validation .big_title, .purchase_id{
-    text-align: center;
-}
-
-.purchase_id{
-    font-size: 1.2em;
-    margin-top: 2%;
-}
-
-#purchase{
-    margin: 40px auto 0;
-    width: 50%
-}*/
-
 /* validation DE LA COMMANDE */
 #validation {
 
@@ -100,4 +79,59 @@ footer {
     text-decoration: none;
     color: #fff;
     margin-top: 10px;
+}
+/*LA PAGE DE VALIDATION LA VERSION RESPONSIVE (MEDIA)- PAGE 4 */
+@media (min-width: 320px) {
+    #validation {
+        margin: 20px;
+    }
+    #validation h1 {
+        font-size: 15px;
+    }
+    #validation p {
+        margin: auto;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 700px) {
+
+    #validation {
+
+        margin: auto;
+        width: 650px;
+        height: 750px;
+    }
+    #validation h1 {
+
+        padding: 50px 0 0 0;
+        font-size: 30px;
+    }
+    #validation p {
+
+        padding: 40px 0 0 20px;
+        font-size: 19px;
+    }
+}
+@media (min-width: 1000px) {
+
+    #validation {
+
+        margin: auto;
+        width: 850px;
+        height: 750px;
+
+    }
+    #validation h1 {
+
+        padding: 60px 0 0 0;
+        font-size: 30px;
+    }
+    #validation p {
+
+        padding: 0px 20px 0px 10px;
+        font-size: 19px;
+        margin-top: 50px;
+    }
+
 }

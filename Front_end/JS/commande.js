@@ -270,6 +270,7 @@ let myform = document.getElementById("myform");
 myform.addEventListener("submit", (e) => {
         
     e.preventDefault()
+   // window.location.href = 'validation.html';//
     myFun();
 
 
@@ -326,7 +327,8 @@ myform.addEventListener("submit", (e) => {
             //aboutissement de la promesse //
             .then(response => {
       
-              console.log(response);
+              console.log(response); 
+              window.location.href = 'validation.html';   
       
           });
         }
@@ -336,7 +338,7 @@ myform.addEventListener("submit", (e) => {
           console.error("Ce formulaire est invalide !");
         }
         data();
-        
+       
 });
       
 

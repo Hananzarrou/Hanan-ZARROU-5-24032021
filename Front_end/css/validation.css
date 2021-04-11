@@ -5,17 +5,17 @@ body {
 }
 /* HEADER */
 .presentation {
-    background: rgba(233, 148, 207, 0.651);
+    background: rgb(243 173 221 / 65%);
     display: flex;
     align-items: center;
     justify-content: space-between;   
 }
 .presentation img  {
-    width: 200px;  
+    width: 120px;  
 }
 .liens {
     display: flex;
-    width: 150px;
+    width: 170px;
     font-size: 20px;   
 }
 .liens ul {
@@ -26,7 +26,7 @@ body {
     display: flex;
     text-decoration: none;
     margin-left: 15px;
-    color: #fff;   
+    color: rgb(184 6 238);  
 }
 .liens i {
     font-size: 25px;
@@ -78,7 +78,7 @@ footer {
 }
 .info a {
     text-decoration: none;
-    color: #fff;
+    color: #656363;
     margin-top: 10px;
 }
 /*LA PAGE DE VALIDATION LA VERSION RESPONSIVE (MEDIA)- PAGE 4 */

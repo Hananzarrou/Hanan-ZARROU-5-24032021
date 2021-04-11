@@ -32,7 +32,7 @@ fetch('http://localhost:3000/api/cameras')
 // CREATION DU BOUTON LIEN VERS PAGE CAMERA              
             let produit = document.createElement('button');
             produit.setAttribute("class", 'btn-produit');
-            produit.textContent = `Voir le Produit`;
+            produit.textContent = `plus de detail...`;
             camera.appendChild(produit);
 //FONCTION DE RECUPERATION DE L'URL PAGE CAMERA    
 

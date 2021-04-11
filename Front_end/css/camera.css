@@ -9,12 +9,12 @@
         
     }
     .picture {
-
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         border-radius: 10px 10px 10px 10px;
-        border: 1px solid black;  
+        box-shadow: 10px 5px #8a8787;
         background: rgb(243 199 228 / 84%);
         width: 300px;
        
@@ -40,7 +40,7 @@
         font-size: 30px;
         font-weight: bold;
         margin: 10px;
-        color: rgba(255, 255, 255, 0.842);
+        color: rgb(154 150 155);
         margin: 20px 0 0 10px;
 
     }
@@ -52,7 +52,7 @@
         font-size: 20px;
         font-weight: bold;
         margin: 10px;
-        color: rgba(255, 255, 255, 0.842);
+        color: black;
         margin: 20px 0 0 10px;
 
     }
@@ -63,7 +63,6 @@
         width: 200px;
     }
     .btn-produit {
-
         display: flex;
         justify-content: center;
 
@@ -106,13 +105,10 @@
 
 @media screen and (min-width: 1000px) {
     .camera {
-
         margin: 100px;
         
     }
     .picture {
-
-        
         border-radius: 10px 10px 10px 10px;
         border: 1px solid black;  
         background: rgb(243 199 228 / 84%);
@@ -126,11 +122,10 @@
         object-fit: cover;
     }
     .name2 {
-
         font-size: 30px;
         font-weight: bold;
         margin: 10px;
-        color: rgba(255, 255, 255, 0.842);
+        color: rgb(154 150 155);
         margin: 20px 0 0 10px;
 
     }
@@ -141,7 +136,7 @@
         flex-direction: column;
         font-size: 20px;
         font-weight: bold;
-        color: rgba(255, 255, 255, 0.842);
+        color: black;
         margin: 20px 0 0 10px;
 
     }
@@ -152,7 +147,6 @@
         width: 98%;
     }
     #liste {
-
         border-radius: 25px 25px 25px 25px;
         padding: 10px 0px 10px 10px;
         margin: 10px;

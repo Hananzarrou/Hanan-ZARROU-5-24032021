@@ -13,6 +13,7 @@
 }
 .table {
     background: rgb(242, 228, 247);
+    border-radius:23px;
     margin-top: 30px;
     box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
     width: 100%;
@@ -22,7 +23,8 @@ th:nth-child(1) {
     width: 35%;
 }
 .table th, .table td {
-   border: 1px solid #000;
+    border-radius:23px;
+   /*border: 1px solid #000;*/
    justify-content: center;
    align-items: center;
     /*border-radius: 1px;*/
@@ -42,13 +44,13 @@ tbody td {
 #thead2 {
     display: flex;
     justify-content: flex-start;
+    border-radius:15px;
     font-weight: bold;
     font-size: 20px;
     height: 60px;
     background: rgb(238, 71, 216);   
 }
 .resultat {
-    border: 1px solid black;
     width: 100%;
     margin-top: 20px;   
 }
@@ -97,6 +99,7 @@ button {
 .formulaire {
     background-color: rgb(250, 206, 244);
     margin-top: 150px;
+    border-radius: 37px;
     overflow: hidden;
 }
 .header {
@@ -114,7 +117,7 @@ button {
 }
 .form input {
     border: 2px solid #fff;
-    border-radius: 14px;
+    border-radius: 25px;
     font-family: inherit;
     width: 100%;
     display: block;
@@ -135,7 +138,7 @@ button {
 }
 
 .btn {
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     background: rgb(154, 150, 155);
     outline: none;

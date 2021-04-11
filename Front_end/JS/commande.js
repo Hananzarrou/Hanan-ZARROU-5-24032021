@@ -113,7 +113,7 @@ if(firstName.value == "") {
     firstName.style.borderColor = "red";
     message[0].style.visibility = "visible";
     message[0].style.color = "red";
-    message[0].innerText = "Votre prénom ne doit pas comptenir des chifres";
+    message[0].innerText = "Votre prénom ne doit pas comptenir des chiffres";
     error[0].style.visibility = "visible";
     error[0].style.color = "red";
 }
@@ -153,7 +153,7 @@ else {
     lastName.style.borderColor = "red";
     message[1].style.visibility = "visible";
     message[1].style.color = "red";
-    message[1].innerText = "Votre nom ne doit pas comptenir des chifres";
+    message[1].innerText = "Votre nom ne doit pas comptenir des chiffres";
     error[1].style.visibility = "visible";
     error[1].style.color = "red";
 }
@@ -253,7 +253,7 @@ else {
         city.style.borderColor = "red";
         message[4].style.visibility = "visible";
         message[4].style.color = "red";
-        message[4].innerText = "Votre nom de la ville ne doit pas comptenir des chifres";
+        message[4].innerText = "Votre nom de la ville ne doit pas comptenir des chiffres";
         error[4].style.visibility = "visible";
         error[4].style.color = "red";
     }

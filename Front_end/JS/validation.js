@@ -12,21 +12,23 @@ console.log(contact)
 let div = document.createElement('div');
 div.id = "div1";
 
-let validationCommande = document.getElementById("validation")
+let validatt = document.getElementById("validation")
 //validationCommande.textContent = identite;//
 //let validation = document.getElementById("div1");//
-validationCommande.appendChild(div);
+validatt.appendChild(div);
 
-let p = document.createElement("p");
-div.appendChild(p);
-p.textContent = "Vous trouvez un récapitulatif de votre commande"
+let title = document.createElement("h1");
+div.appendChild(title);
+title.textContent = "Vous trouvez un récapitulatif de votre commande"
 
 let pcontact = document.createElement("p");
+pcontact.classList.add("text-center", "font-weight-bold");
 div.appendChild(pcontact);
 pcontact.textContent = contact;
-let paragraphe = document.createElement("p");
-div.appendChild(paragraphe);
-paragraphe.textContent = "vous trouvez l'identifiant de votre commande"
+
+let titre = document.createElement("h1");
+div.appendChild(titre);
+titre.textContent = "vous trouvez l'identifiant de votre commande"
 
 
 let validationCommande = document.createElement("p")
@@ -34,12 +36,14 @@ validationCommande.textContent = identite;
 let validation = document.getElementById("div1");
 validation.appendChild(validationCommande);
 
-let montant = document.createElement("p");
+let montant = document.createElement("h1");
+montant.classList.add("text-center", "font-weight-bold");
 div.appendChild(montant);
 montant.textContent = "Montant total de votre commande"
 
 
-let validationTotal = document.createElement("p")
+let validationTotal = document.createElement("p");
+validationTotal.classList.add("text-center", "font-weight-bold", "color-blue");
 validationTotal.textContent = resultat + " €";
 
 validation.appendChild(validationTotal);

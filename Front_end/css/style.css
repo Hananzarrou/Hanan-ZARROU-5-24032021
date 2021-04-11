@@ -152,20 +152,15 @@ footer {
 @media (min-width: 760px) {
 
     h1 {
-
-        font-size: 30px;
-        
-        
+        font-size: 30px;   
     }
 
     #main {  
         display: flex;
     }
     .photo {
-
         display: flex;
-        flex-direction: column;
-           
+        flex-direction: column;       
     }
 
     .image { 
@@ -176,7 +171,6 @@ footer {
         width: 278px;
     }
     .camera {
-
         display: flex;
         justify-content: center;
 

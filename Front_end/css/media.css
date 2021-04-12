@@ -23,37 +23,27 @@
 }
 
 @media screen and (min-width: 900px) {
-
-   
     #main {
 
         display: flex;
         justify-content: center;
     }
-
     .photo {
-
         margin: 50px 20px 0 0;
 
     }
     .description {
-
         color: rgb(109, 105, 105);
-
     }
 }
 @media screen and (min-width: 620px) {
     .info ul {
-
         display: flex;
         justify-content: center;
         flex-direction: row;
-
     }
     .info a {
-
         display: flex;
         margin-left: 40px;
-
     }
 }
